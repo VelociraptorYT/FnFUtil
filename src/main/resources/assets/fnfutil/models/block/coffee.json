@@ -1,0 +1,7 @@
+{
+  "parent": "fnfutil:custom/coffee",
+  "textures": {
+    "all": "fnfutil:models/block/coffee"
+  },
+  "render_type": "cutout"
+}

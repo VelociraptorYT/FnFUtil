@@ -1,0 +1,6 @@
+{
+  "parent": "fnfutil:custom/puppets_disc",
+  "textures": {
+    "all": "fnfutil:models/block/cassette_player"
+  }
+}

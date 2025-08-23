@@ -1,0 +1,6 @@
+{
+  "parent": "fnfutil:custom/bonnie_ears",
+  "textures": {
+    "all": "fnfutil:models/armor/bonnie_ears"
+  }
+}

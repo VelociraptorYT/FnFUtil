@@ -1,0 +1,7 @@
+{
+  "parent": "fnfutil:custom/credit_card",
+  "textures": {
+    "0": "fnfutil:models/item/credit_card",
+    "particle": "fnfutil:models/item/credit_card"
+  }
+}

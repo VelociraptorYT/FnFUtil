@@ -1,0 +1,29 @@
+{
+  "puppets_music": {
+    "subtitle": "sounds.fnfutil.puppets_music",
+    "sounds": [
+      {
+        "name": "fnfutil:puppets_music",
+        "stream": true
+      }
+    ]
+  },
+  "endo_attach": {
+    "subtitle": "sounds.fnfutil.endo_attach",
+    "sounds": [
+      {
+        "name": "fnfutil:endo_attach",
+        "stream": true
+      }
+    ]
+  },
+  "endo_detach": {
+    "subtitle": "sounds.fnfutil.endo_detach",
+    "sounds": [
+      {
+        "name": "fnfutil:endo_detach",
+        "stream": true
+      }
+    ]
+  }
+}

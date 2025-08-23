@@ -1,0 +1,7 @@
+{
+  "parent": "fnfutil:custom/cassette_player",
+  "textures": {
+    "all": "fnfutil:models/block/cassette_player"
+  },
+  "render_type": "cutout"
+}

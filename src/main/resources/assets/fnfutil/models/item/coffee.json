@@ -1,0 +1,6 @@
+{
+  "parent": "fnfutil:custom/coffee",
+  "textures": {
+    "layer0": "fnfutil:models/block/coffee"
+  }
+}

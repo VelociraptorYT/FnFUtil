@@ -1,0 +1,7 @@
+{
+  "parent": "fnfutil:custom/coffee_machine",
+  "textures": {
+    "all": "fnfutil:models/block/coffee_machine_texture"
+  },
+  "render_type": "cutout"
+}
