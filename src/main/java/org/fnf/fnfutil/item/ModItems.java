@@ -28,8 +28,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> PUPPETS_DISC = ITEMS.register("puppets_disc",
             () -> new RecordItem(4, ModSounds.PUPPETS_MUSIC,
-                    new Item.Properties().tab(ModCreativeModeTab.FNFUTIL).stacksTo(1), 144000));
-
+                    new Item.Properties().tab(ModCreativeModeTab.FNFUTIL).stacksTo(1), 1200));
+//144000
     // Coffee machine BlockItem
     public static final RegistryObject<Item> COFFEE_MACHINE = ITEMS.register("coffee_machine",
             () -> new CoffeeMachineItem(ModBlocks.COFFEE_MACHINE.get(),

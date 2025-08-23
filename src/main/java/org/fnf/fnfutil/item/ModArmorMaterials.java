@@ -1,13 +1,16 @@
 package org.fnf.fnfutil.item;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
+import org.fnf.fnfutil.fnfmain;
+import org.fnf.fnfutil.sound.ModSounds;
 
 public enum ModArmorMaterials implements ArmorMaterial {
     ANIMATRONIC("animatronic", 0, new int[]{0, 0, 0, 0}, 0,
-            SoundEvents.ARMOR_EQUIP_CHAIN, 0.0F, 0.0F, Ingredient.of());
+            ModSounds.ENDO_ATTACH.get(), 0.0F, 0.0F, Ingredient.of());
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
     private final String name;
@@ -33,13 +36,12 @@ public enum ModArmorMaterials implements ArmorMaterial {
     }
 
     @Override
-    public int getDurabilityForSlot(net.minecraft.world.entity.EquipmentSlot slot) {
-        // return effectively infinite durability
-        return Integer.MAX_VALUE;
+    public int getDurabilityForSlot(EquipmentSlot slot) {
+        return Integer.MAX_VALUE; // effectively indestructible
     }
 
     @Override
-    public int getDefenseForSlot(net.minecraft.world.entity.EquipmentSlot slot) {
+    public int getDefenseForSlot(EquipmentSlot slot) {
         return protectionAmounts[slot.getIndex()];
     }
 
@@ -53,6 +55,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
         return equipSound;
     }
 
+
     @Override
     public Ingredient getRepairIngredient() {
         return repairIngredient;
@@ -60,7 +63,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return name;
+        return fnfmain.MOD_ID + ":" + name;
     }
 
     @Override
