@@ -25,5 +25,14 @@
         "stream": true
       }
     ]
+  },
+  "toy_gun_fire": {
+    "subtitle": "sounds.fnfutil.toy_gun_fire",
+    "sounds": [
+      {
+        "name": "fnfutil:toy_gun_fire",
+        "stream": true
+      }
+    ]
   }
 }

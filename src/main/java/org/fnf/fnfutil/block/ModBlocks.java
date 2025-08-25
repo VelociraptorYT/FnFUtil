@@ -1,7 +1,9 @@
 package org.fnf.fnfutil.block;
 
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -32,6 +34,9 @@ public class ModBlocks {
             () -> new CoffeeBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .strength(0.1F)
                     .noOcclusion()));
+
+    public static final RegistryObject<Block> CAUTION = BLOCKS.register("caution",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).sound(SoundType.STONE)));
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

@@ -1,0 +1,6 @@
+{
+  "parent": "fnfutil:custom/fire_axe",
+  "textures": {
+    "all": "fnfutil:models/item/fire_axe"
+  }
+}

@@ -14,5 +14,13 @@
   "item.fnfutil.money": "Money",
   "item.fnfutil.phone": "Phone",
   "item.fnfutil.comically_large_spoon": "Comically Large Spoon",
-  "item.fnfutil.credit_card": "Credit Card"
+  "item.fnfutil.credit_card": "Credit Card",
+  "block.fnfutil.caution": "Caution Block",
+  "item.fnfutil.fire_axe": "Fire Axe",
+  "item.fnfutil.kabob": "Kabob",
+  "item.fnfutil.taco": "Taco",
+  "item.fnfutil.banana": "Banana",
+  "item.fnfutil.chocolate": "Chocolate Bar",
+  "item.fnfutil.veggie_pizza": "Veggie Pizza Slice",
+  "item.fnfutil.toy_gun": "Toy Gun"
 }

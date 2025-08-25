@@ -15,6 +15,9 @@ public class ModSounds {
     public static RegistryObject<SoundEvent> ENDO_ATTACH = registerSoundEvent("endo_attach");
     public static RegistryObject<SoundEvent> ENDO_DETACH = registerSoundEvent("endo_detach");
     public static RegistryObject<SoundEvent> PUPPETS_MUSIC = registerSoundEvent("puppets_music");
+    public static RegistryObject<SoundEvent> TOY_GUN_FIRE = registerSoundEvent("toy_gun_fire");
+
+
 
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(fnfmain.MOD_ID, name)));

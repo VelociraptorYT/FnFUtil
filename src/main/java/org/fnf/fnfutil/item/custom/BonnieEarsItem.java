@@ -65,14 +65,17 @@ public class BonnieEarsItem extends GeoArmorItem implements IAnimatable {
     public void inventoryTick(ItemStack stack, Level level, net.minecraft.world.entity.Entity entity, int slot, boolean selected) {
         if (!level.isClientSide && entity instanceof LivingEntity living) {
             boolean isWearing = living.getItemBySlot(getSlot()) == stack;
+            var tag = stack.getOrCreateTag();
+
+            boolean wasEquipped = tag.getBoolean("WasEquipped");
 
             if (isWearing && !wasEquipped) {
-                wasEquipped = true;
+                tag.putBoolean("WasEquipped", true);
             }
 
             if (!isWearing && wasEquipped) {
+                tag.putBoolean("WasEquipped", false);
                 level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.ENDO_DETACH.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
-                wasEquipped = false;
             }
         }
     }

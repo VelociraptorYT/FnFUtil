@@ -9,11 +9,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.fnf.fnfutil.item.custom.BonnieEarsItem;
+import org.fnf.fnfutil.item.custom.*;
 import org.fnf.fnfutil.block.ModBlocks;
-import org.fnf.fnfutil.item.custom.CassettePlayerItem;
-import org.fnf.fnfutil.item.custom.CoffeeItem;
-import org.fnf.fnfutil.item.custom.CoffeeMachineItem;
 import org.fnf.fnfutil.sound.ModSounds;
 
 import static org.fnf.fnfutil.fnfmain.MOD_ID;
@@ -66,6 +63,31 @@ public class ModItems {
 
     public static final RegistryObject<Item> credit_card = ITEMS.register("credit_card",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
+
+    static final RegistryObject<Item> CAUTION = ITEMS.register("caution",
+            () -> new BlockItem(ModBlocks.CAUTION.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
+
+    public static final RegistryObject<Item> FIRE_AXE = ITEMS.register("fire_axe",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
+
+    public static final RegistryObject<Item> KABOB = ITEMS.register("kabob",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
+
+    public static final RegistryObject<Item> TACO = ITEMS.register("taco",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
+
+    public static final RegistryObject<Item> BANANA = ITEMS.register("banana",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
+
+    public static final RegistryObject<Item> CHOCOLATE = ITEMS.register("chocolate",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
+
+    public static final RegistryObject<Item> VEGGIE_PIZZA = ITEMS.register("veggie_pizza",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
+
+    public static final RegistryObject<Item> TOY_GUN = ITEMS.register("toy_gun",
+            () -> new ToyGunItem(new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
