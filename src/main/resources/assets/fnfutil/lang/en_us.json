@@ -22,5 +22,10 @@
   "item.fnfutil.banana": "Banana",
   "item.fnfutil.chocolate": "Chocolate Bar",
   "item.fnfutil.veggie_pizza": "Veggie Pizza Slice",
-  "item.fnfutil.toy_gun": "Toy Gun"
+  "item.fnfutil.toy_gun": "Toy Gun",
+  "key.fnfutil.next_script": "Next Script",
+  "key.fnfutil.scroll_down": "Scroll Down",
+  "key.fnfutil.scroll_up": "Scroll Up",
+  "key.fnfutil.toggle_script": "Toggle Script UI",
+  "block.fnfutil.fiona": "Fiona WIP"
 }

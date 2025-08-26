@@ -3,7 +3,6 @@ package org.fnf.fnfutil.item;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.RecordItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -30,6 +29,10 @@ public class ModItems {
     // Coffee machine BlockItem
     public static final RegistryObject<Item> COFFEE_MACHINE = ITEMS.register("coffee_machine",
             () -> new CoffeeMachineItem(ModBlocks.COFFEE_MACHINE.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
+
+    public static final RegistryObject<Item> FIONA = ITEMS.register("fiona",
+            () -> new FionaItem(ModBlocks.FIONA.get(),
                     new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
 
     public static final RegistryObject<Item> CASSETTE_PLAYER = ITEMS.register("cassette_player",

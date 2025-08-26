@@ -1,11 +1,9 @@
 package org.fnf.fnfutil.block;
 
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -13,6 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 import org.fnf.fnfutil.block.custom.CassettePlayerBlock;
 import org.fnf.fnfutil.block.custom.CoffeeBlock;
 import org.fnf.fnfutil.block.custom.CoffeeMachineBlock;
+import org.fnf.fnfutil.block.custom.FionaBlock;
 
 import static org.fnf.fnfutil.fnfmain.MOD_ID;
 
@@ -32,6 +31,11 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> COFFEE = BLOCKS.register("coffee",
             () -> new CoffeeBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+                    .strength(0.1F)
+                    .noOcclusion()));
+
+    public static final RegistryObject<Block> FIONA = BLOCKS.register("fiona",
+            () -> new FionaBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .strength(0.1F)
                     .noOcclusion()));
 

@@ -9,6 +9,7 @@ import org.fnf.fnfutil.block.ModBlocks;
 import org.fnf.fnfutil.block.entity.custom.CassettePlayerBlockEntity;
 import org.fnf.fnfutil.block.entity.custom.CoffeeBlockEntity;
 import org.fnf.fnfutil.block.entity.custom.CoffeeMachineBlockEntity;
+import org.fnf.fnfutil.block.entity.custom.FionaBlockEntity;
 import org.fnf.fnfutil.fnfmain;
 
 public class ModBlockEntities {
@@ -19,6 +20,11 @@ public class ModBlockEntities {
             BLOCK_ENTITY_TYPES.register("coffee_machine_block_entity", () ->
                             BlockEntityType.Builder.of(CoffeeMachineBlockEntity::new,
                             ModBlocks.COFFEE_MACHINE.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<FionaBlockEntity>> FIONA_BLOCK_ENTITY =
+            BLOCK_ENTITY_TYPES.register("fiona_block_entity", () ->
+                    BlockEntityType.Builder.of(FionaBlockEntity::new,
+                            ModBlocks.FIONA.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<CassettePlayerBlockEntity>> CASSETTE_PLAYER_BLOCK_ENTITY =
             BLOCK_ENTITY_TYPES.register("cassette_player_block_entity", () ->

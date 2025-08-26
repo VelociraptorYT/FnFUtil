@@ -97,7 +97,7 @@ public class CassettePlayerBlockEntity extends BlockEntity implements IAnimatabl
                 ResourceLocation soundId = Registry.SOUND_EVENT.getKey(record.getSound());
                 for (ServerPlayer player : ((ServerLevel) level).players()) {
                     ModNetworking.CHANNEL.sendTo(
-                            new StartCassetteSoundPacket(worldPosition, soundId),
+                            new StartCassetteSoundPacket(worldPosition, soundId.toString()),
                             player.connection.connection,
                             NetworkDirection.PLAY_TO_CLIENT
                     );

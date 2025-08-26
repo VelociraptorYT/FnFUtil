@@ -1,0 +1,7 @@
+{
+  "parent": "fnfutil:custom/fiona",
+  "textures": {
+    "all": "fnfutil:models/block/fiona"
+  },
+  "render_type": "cutout"
+}

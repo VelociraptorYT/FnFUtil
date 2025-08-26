@@ -1,0 +1,6 @@
+{
+  "parent": "fnfutil:custom/fiona",
+  "textures": {
+    "layer0": "fnfutil:models/block/fiona"
+  }
+}

@@ -13,6 +13,7 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.fnf.fnfutil.block.ModBlocks;
 import org.fnf.fnfutil.block.entity.ModBlockEntities;
+import org.fnf.fnfutil.client.ModClientSetup;
 import org.fnf.fnfutil.item.ModItems;
 import org.fnf.fnfutil.item.custom.BonnieEarsItem;
 import org.fnf.fnfutil.client.renderer.BonnieEarsRenderer;
@@ -30,7 +31,7 @@ public class fnfmain {
     public static final boolean ENFORCE_WHITELIST = false; // flip to false to disable whitelist enforcement
 
     public static final String[] WHITELISTED_USERS = {
-            "DarkDogPlayz", "SemiTransparentMan", "YourLocal_Femboy", "LucasGrady", "Dev"
+            "", "", "YourLocal_Femboy", "", "Dev"
     };
 
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -62,12 +63,12 @@ public class fnfmain {
 
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            ModClientSetup.createScriptFolder(Minecraft.getInstance().gameDirectory);
             GeoArmorRenderer.registerArmorRenderer(BonnieEarsItem.class, BonnieEarsRenderer::new);
 
             String username = Minecraft.getInstance().getUser().getName();
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", username);
-
             if (!fnfmain.ENFORCE_WHITELIST) {
                 LOGGER.info("Whitelist enforcement disabled.");
                 return;

@@ -1,31 +1,34 @@
 package org.fnf.fnfutil.network;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.network.NetworkEvent;
 import org.fnf.fnfutil.client.sound.CassetteSoundManager;
 
 import java.util.function.Supplier;
-import net.minecraft.core.BlockPos;
 
 public class StopCassetteSoundPacket {
-    private final BlockPos pos;
+    public final BlockPos pos;
 
     public StopCassetteSoundPacket(BlockPos pos) {
         this.pos = pos;
     }
 
-    public static void encode(StopCassetteSoundPacket packet, FriendlyByteBuf buf) {
-        buf.writeBlockPos(packet.pos);
+    public StopCassetteSoundPacket(FriendlyByteBuf buf) {
+        this.pos = buf.readBlockPos();
     }
 
-    public static StopCassetteSoundPacket decode(FriendlyByteBuf buf) {
-        return new StopCassetteSoundPacket(buf.readBlockPos());
+    public void encode(FriendlyByteBuf buf) {
+        buf.writeBlockPos(pos);
     }
 
-    public static void handle(StopCassetteSoundPacket packet, Supplier<NetworkEvent.Context> contextSupplier) {
-        contextSupplier.get().enqueueWork(() -> {
-            CassetteSoundManager.stop(packet.pos);
+    public static void handle(StopCassetteSoundPacket packet, Supplier<NetworkEvent.Context> ctx) {
+        ctx.get().enqueueWork(() -> {
+            if (Minecraft.getInstance().level != null) {
+                CassetteSoundManager.stop(packet.pos);
+            }
         });
-        contextSupplier.get().setPacketHandled(true);
+        ctx.get().setPacketHandled(true);
     }
 }

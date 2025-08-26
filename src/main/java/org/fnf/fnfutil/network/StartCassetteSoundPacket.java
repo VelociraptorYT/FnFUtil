@@ -1,40 +1,48 @@
 package org.fnf.fnfutil.network;
 
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.core.BlockPos;
-import net.minecraftforge.network.NetworkEvent;
-import org.fnf.fnfutil.client.sound.CassetteSoundManager;
-import net.minecraft.core.Registry;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import org.fnf.fnfutil.client.sound.CassetteSoundManager;
 
 import java.util.function.Supplier;
 
 public class StartCassetteSoundPacket {
-    private final BlockPos pos;
-    private final ResourceLocation soundId;
+    public final BlockPos pos;
+    public final String soundId; // Stored as string for safe serialization
 
-    public StartCassetteSoundPacket(BlockPos pos, ResourceLocation soundId) {
+    public StartCassetteSoundPacket(BlockPos pos, String soundId) {
         this.pos = pos;
         this.soundId = soundId;
     }
 
-    public static void encode(StartCassetteSoundPacket packet, FriendlyByteBuf buf) {
-        buf.writeBlockPos(packet.pos);
-        buf.writeResourceLocation(packet.soundId);
+    public StartCassetteSoundPacket(FriendlyByteBuf buf) {
+        this.pos = buf.readBlockPos();
+        this.soundId = buf.readUtf();
     }
 
-    public static StartCassetteSoundPacket decode(FriendlyByteBuf buf) {
-        return new StartCassetteSoundPacket(buf.readBlockPos(), buf.readResourceLocation());
+    public void encode(FriendlyByteBuf buf) {
+        buf.writeBlockPos(pos);
+        buf.writeUtf(soundId);
     }
 
-    public static void handle(StartCassetteSoundPacket packet, Supplier<NetworkEvent.Context> contextSupplier) {
-        contextSupplier.get().enqueueWork(() -> {
-            SoundEvent sound = Registry.SOUND_EVENT.get(packet.soundId);
-            if (sound != null) {
-                CassetteSoundManager.play(packet.pos, sound);
+    public static void handle(StartCassetteSoundPacket packet, Supplier<NetworkEvent.Context> ctx) {
+        ctx.get().enqueueWork(() -> {
+            if (Minecraft.getInstance().level != null) {
+                ResourceLocation soundLoc = new ResourceLocation(packet.soundId);
+                SoundEvent sound = ForgeRegistries.SOUND_EVENTS.getValue(soundLoc);
+
+                if (sound != null) {
+                    CassetteSoundManager.play(packet.pos, sound);
+                } else {
+                    System.err.println("CassetteSoundManager: Unknown sound ID " + packet.soundId);
+                }
             }
         });
-        contextSupplier.get().setPacketHandled(true);
+        ctx.get().setPacketHandled(true);
     }
 }
