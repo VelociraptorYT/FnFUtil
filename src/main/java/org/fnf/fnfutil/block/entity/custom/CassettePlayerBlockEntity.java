@@ -39,6 +39,7 @@ public class CassettePlayerBlockEntity extends BlockEntity implements IAnimatabl
     private long tickCount = 0;
     private long recordStartedTick = 0;
     private int ticksSinceLastEvent = 0;
+    private float soundRange = Float.MAX_VALUE; // default range in blocks
 
     private String currentAnimation;
 
@@ -71,6 +72,14 @@ public class CassettePlayerBlockEntity extends BlockEntity implements IAnimatabl
         return cassette;
     }
 
+    public void setSoundRange(float range) {
+        this.soundRange = range;
+    }
+
+    public float getSoundRange() {
+        return soundRange;
+    }
+
     public void insertCassette(ItemStack stack) {
         this.cassette = stack.copy();
         startPlaying();
@@ -97,7 +106,7 @@ public class CassettePlayerBlockEntity extends BlockEntity implements IAnimatabl
                 ResourceLocation soundId = Registry.SOUND_EVENT.getKey(record.getSound());
                 for (ServerPlayer player : ((ServerLevel) level).players()) {
                     ModNetworking.CHANNEL.sendTo(
-                            new StartCassetteSoundPacket(worldPosition, soundId.toString()),
+                            new StartCassetteSoundPacket(worldPosition, soundId.toString(), getSoundRange()),
                             player.connection.connection,
                             NetworkDirection.PLAY_TO_CLIENT
                     );

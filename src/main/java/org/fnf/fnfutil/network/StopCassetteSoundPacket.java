@@ -27,6 +27,7 @@ public class StopCassetteSoundPacket {
         ctx.get().enqueueWork(() -> {
             if (Minecraft.getInstance().level != null) {
                 CassetteSoundManager.stop(packet.pos);
+
             }
         });
         ctx.get().setPacketHandled(true);

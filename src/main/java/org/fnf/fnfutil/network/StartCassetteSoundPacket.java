@@ -13,21 +13,25 @@ import java.util.function.Supplier;
 
 public class StartCassetteSoundPacket {
     public final BlockPos pos;
-    public final String soundId; // Stored as string for safe serialization
+    public final String soundId;
+    public final float range;
 
-    public StartCassetteSoundPacket(BlockPos pos, String soundId) {
+    public StartCassetteSoundPacket(BlockPos pos, String soundId, float range) {
         this.pos = pos;
         this.soundId = soundId;
+        this.range = range;
     }
 
     public StartCassetteSoundPacket(FriendlyByteBuf buf) {
         this.pos = buf.readBlockPos();
         this.soundId = buf.readUtf();
+        this.range = buf.readFloat();
     }
 
     public void encode(FriendlyByteBuf buf) {
         buf.writeBlockPos(pos);
         buf.writeUtf(soundId);
+        buf.writeFloat(range);
     }
 
     public static void handle(StartCassetteSoundPacket packet, Supplier<NetworkEvent.Context> ctx) {
@@ -37,7 +41,7 @@ public class StartCassetteSoundPacket {
                 SoundEvent sound = ForgeRegistries.SOUND_EVENTS.getValue(soundLoc);
 
                 if (sound != null) {
-                    CassetteSoundManager.play(packet.pos, sound);
+                    CassetteSoundManager.play(packet.pos, sound, packet.range);
                 } else {
                     System.err.println("CassetteSoundManager: Unknown sound ID " + packet.soundId);
                 }
