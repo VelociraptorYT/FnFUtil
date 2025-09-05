@@ -23,8 +23,8 @@ public class ScriptManager {
     private int currentScriptIndex = 0;
 
     // Replace with your actual folder ID and API key
-    private static final String DRIVE_FOLDER_ID = "1Cr-g2tKtD-dcyCoXIyuGk1LxAhnT6X2S";
-    private static final String API_KEY = "AIzaSyBPWfXdhkzVb2HC8_pVjVi_IZdimvZ6IeU";
+    private static final String DRIVE_FOLDER_ID = "############################";
+    private static final String API_KEY = "############################";
 
     public ScriptManager(File gameDir) {
         this.scriptFolder = new File(gameDir, "fnfutil/scripts");
