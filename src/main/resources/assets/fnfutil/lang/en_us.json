@@ -27,5 +27,9 @@
   "key.fnfutil.scroll_down": "Scroll Down",
   "key.fnfutil.scroll_up": "Scroll Up",
   "key.fnfutil.toggle_script": "Toggle Script UI",
-  "block.fnfutil.fiona": "Fiona WIP"
+  "block.fnfutil.fiona": "Fiona WIP",
+  "key.categories.fnfutil": "FredBear&Friends Utilities",
+  "item.fnfutil.cowboy_hat": "Cowboy Hat",
+  "item.fnfutil.gun": "Gun",
+  "block.fnfutil.sl33py_plush": "Sl33py Plush :3"
 }

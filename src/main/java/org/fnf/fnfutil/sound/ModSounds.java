@@ -16,6 +16,8 @@ public class ModSounds {
     public static RegistryObject<SoundEvent> ENDO_DETACH = registerSoundEvent("endo_detach");
     public static RegistryObject<SoundEvent> PUPPETS_MUSIC = registerSoundEvent("puppets_music");
     public static RegistryObject<SoundEvent> TOY_GUN_FIRE = registerSoundEvent("toy_gun_fire");
+    public static RegistryObject<SoundEvent> PLUSH_HONK = registerSoundEvent("plush_honk");
+    public static RegistryObject<SoundEvent> GUN_FIRE = registerSoundEvent("gun_fire");
 
 
 

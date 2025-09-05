@@ -1,6 +1,7 @@
 package org.fnf.fnfutil.item;
 
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.RecordItem;
@@ -20,6 +21,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> BONNIE_EARS = ITEMS.register("bonnie_ears",
             () -> new BonnieEarsItem(ModArmorMaterials.ANIMATRONIC, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
+
+    public static final RegistryObject<Item> COWBOY_HAT = ITEMS.register("cowboy_hat",
+            () -> new CowboyHatItem(ArmorMaterials.LEATHER, EquipmentSlot.HEAD,
                     new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
 
     public static final RegistryObject<Item> PUPPETS_DISC = ITEMS.register("puppets_disc",
@@ -64,7 +69,7 @@ public class ModItems {
     public static final RegistryObject<Item> FRENCH_FRIES = ITEMS.register("french_fries",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
 
-    public static final RegistryObject<Item> credit_card = ITEMS.register("credit_card",
+    public static final RegistryObject<Item> CREDIT_CARD = ITEMS.register("credit_card",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
 
     static final RegistryObject<Item> CAUTION = ITEMS.register("caution",
@@ -91,6 +96,13 @@ public class ModItems {
 
     public static final RegistryObject<Item> TOY_GUN = ITEMS.register("toy_gun",
             () -> new ToyGunItem(new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
+
+    public static final RegistryObject<Item> GUN = ITEMS.register("gun",
+            () -> new GunItem(new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
+
+    public static final RegistryObject<Item> SL33PY_PLUSH = ITEMS.register("sl33py_plush",
+            () -> new Sl33pyPlushItem(ModBlocks.SL33PY_PLUSH.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.FNFUTIL)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

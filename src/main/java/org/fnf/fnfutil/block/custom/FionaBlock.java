@@ -55,15 +55,19 @@ public class FionaBlock extends BaseEntityBlock implements EntityBlock {
         Direction dir = state.getValue(FACING);
         switch (dir) {
             case NORTH:
-                return Block.box(1.6D, 0.0D, -16.0D, 14.4D, 24.0D, 32.0D); // narrow X, deep Z
+                // Original: box(1.6, 0, -16, 14.4, 24, 32)
+                return Block.box(-16.0D, 0.0D, 1.6D, 32.0D, 24.0D, 14.4D);
             case SOUTH:
-                return Block.box(1.6D, 0.0D, -16.0D, 14.4D, 24.0D, 32.0D); // same as NORTH, mirrored
+                // Same shape as NORTH, so same rotation
+                return Block.box(-16.0D, 0.0D, 1.6D, 32.0D, 24.0D, 14.4D);
             case EAST:
-                return Block.box(-16.0D, 0.0D, 1.6D, 32.0D, 24.0D, 14.4D); // rotated 90° clockwise
+                // Original: box(-16, 0, 1.6, 32, 24, 14.4)
+                return Block.box(1.6D, 0.0D, -16.0D, 14.4D, 24.0D, 32.0D);
             case WEST:
-                return Block.box(-16.0D, 0.0D, 1.6D, 32.0D, 24.0D, 14.4D); // rotated 90° counterclockwise
+                // Same as EAST, same rotation
+                return Block.box(1.6D, 0.0D, -16.0D, 14.4D, 24.0D, 32.0D);
             default:
-                return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D); // fallback full block
+                return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
         }
     }
 

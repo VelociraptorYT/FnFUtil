@@ -1,0 +1,6 @@
+{
+  "parent": "fnfutil:custom/cowboy_hat",
+  "textures": {
+    "all": "fnfutil:models/armor/cowboy_hat"
+  }
+}

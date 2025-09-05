@@ -1,0 +1,7 @@
+
+{
+  "parent": "fnfutil:displaysettings/plush",
+  "textures": {
+    "particle": "fnfutil:models/block/sl33py_plush"
+  }
+}

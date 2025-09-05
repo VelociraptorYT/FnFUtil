@@ -1,0 +1,7 @@
+{
+  "parent": "fnfutil:custom/gun",
+  "textures": {
+    "0": "fnfutil:models/item/gun",
+    "particle": "fnfutil:models/item/gun"
+  }
+}

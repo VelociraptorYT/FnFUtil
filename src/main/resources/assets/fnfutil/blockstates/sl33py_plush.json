@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fnfutil:custom/sl33py_plush"
+    },
+    "facing=east": {
+      "model": "fnfutil:custom/sl33py_plush",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "fnfutil:custom/sl33py_plush",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fnfutil:custom/sl33py_plush",
+      "y": 270
+    }
+  }
+}

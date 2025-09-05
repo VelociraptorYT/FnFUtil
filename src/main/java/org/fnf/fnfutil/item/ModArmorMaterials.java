@@ -10,7 +10,7 @@ import org.fnf.fnfutil.sound.ModSounds;
 
 public enum ModArmorMaterials implements ArmorMaterial {
     ANIMATRONIC("animatronic", 0, new int[]{0, 0, 0, 0}, 0,
-            ModSounds.ENDO_ATTACH.get(), 0.0F, 0.0F, Ingredient.of());
+            null, 0.0F, 0.0F, Ingredient.of());
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
     private final String name;

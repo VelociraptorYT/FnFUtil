@@ -13,6 +13,7 @@ import org.fnf.fnfutil.block.entity.ModBlockEntities;
 import org.fnf.fnfutil.client.script.ScriptManager;
 import org.fnf.fnfutil.client.script.ScriptOverlayRenderer;
 import org.fnf.fnfutil.item.custom.BonnieEarsItem;
+import org.fnf.fnfutil.item.custom.CowboyHatItem;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 import java.io.IOException;
@@ -27,6 +28,8 @@ public class ModEventClientBusEvents {
     @SubscribeEvent
     public static void registerArmorRenderers(final EntityRenderersEvent.AddLayers event) {
         GeoArmorRenderer.registerArmorRenderer(BonnieEarsItem.class, new BonnieEarsRenderer());
+        GeoArmorRenderer.registerArmorRenderer(CowboyHatItem.class, new CowboyHatRenderer());
+
     }
 
     @SubscribeEvent
@@ -35,5 +38,6 @@ public class ModEventClientBusEvents {
         event.registerBlockEntityRenderer(ModBlockEntities.CASSETTE_PLAYER_BLOCK_ENTITY.get(), CassettePlayerBlockRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.COFFEE_BLOCK_ENTITY.get(), CoffeeBlockRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.FIONA_BLOCK_ENTITY.get(), FionaBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.SL33PY_PLUSH_BLOCK_ENTITY.get(), Sl33pyPlushBlockRenderer::new);
     }
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fnfutil:custom/cassette_player"
+    },
+    "facing=east": {
+      "model": "fnfutil:custom/cassette_player",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "fnfutil:custom/cassette_player",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fnfutil:custom/cassette_player",
+      "y": 270
+    }
+  }
+}

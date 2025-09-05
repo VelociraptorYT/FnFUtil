@@ -12,12 +12,13 @@
 			},
 			"bones": [
 				{
-					"name": "coffee machine",
-					"pivot": [0, 0, 0]
+					"name": "coffeemachine",
+					"pivot": [0, 0, 0],
+					"rotation": [0, 90, 0]
 				},
 				{
 					"name": "machine",
-					"parent": "coffee machine",
+					"parent": "coffeemachine",
 					"pivot": [-0.21053, 9.86316, -1.48684],
 					"cubes": [
 						{

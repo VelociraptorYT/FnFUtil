@@ -14,14 +14,18 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.fnf.fnfutil.block.ModBlocks;
 import org.fnf.fnfutil.block.entity.ModBlockEntities;
 import org.fnf.fnfutil.client.ModClientSetup;
+import org.fnf.fnfutil.client.renderer.CowboyHatRenderer;
 import org.fnf.fnfutil.item.ModItems;
 import org.fnf.fnfutil.item.custom.BonnieEarsItem;
 import org.fnf.fnfutil.client.renderer.BonnieEarsRenderer;
+import org.fnf.fnfutil.item.custom.CowboyHatItem;
 import org.fnf.fnfutil.network.ModNetworking;
 import org.fnf.fnfutil.sound.ModSounds;
 import org.slf4j.Logger;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
-import org.fnf.fnfutil.item.ModCreativeModeTab;
+
+import java.io.InputStream;
+import java.io.IOException;
 
 @Mod(fnfmain.MOD_ID)
 public class fnfmain {
@@ -65,10 +69,20 @@ public class fnfmain {
         public static void onClientSetup(FMLClientSetupEvent event) {
             ModClientSetup.createScriptFolder(Minecraft.getInstance().gameDirectory);
             GeoArmorRenderer.registerArmorRenderer(BonnieEarsItem.class, BonnieEarsRenderer::new);
-
+            GeoArmorRenderer.registerArmorRenderer(CowboyHatItem.class, CowboyHatRenderer::new);
             String username = Minecraft.getInstance().getUser().getName();
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", username);
+
+
+            // 🥖 Fredbread Loadbearing Check
+            try (InputStream fredbreadStream = fnfmain.class.getResourceAsStream("/assets/fredbread.jpg")) {
+                if (fredbreadStream == null) {
+                    throw new RuntimeException("FREDBREAD IS MISSING. THE MOD CANNOT FUNCTION.");
+                }
+                LOGGER.info("Fredbread loaded successfully. Emotional core stabilized.");
+            } catch (IOException e) {
+                throw new RuntimeException("Fredbread check failed: " + e.getMessage());
+            }
+
             if (!fnfmain.ENFORCE_WHITELIST) {
                 LOGGER.info("Whitelist enforcement disabled.");
                 return;

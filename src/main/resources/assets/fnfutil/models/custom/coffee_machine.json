@@ -1,9 +1,10 @@
 {
 	"format_version": "1.9.0",
-	"credit": "Made with Blockbench",
+	"credit": "Made by SL33PY for FNFUtil™",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "fnfutil:models/block/coffee_machine"
+		"0": "fnfutil:models/block/coffee_machine",
+		"particle": "fnfutil:models/block/coffee_machine"
 	},
 	"elements": [
 		{

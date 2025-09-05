@@ -8,10 +8,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.fnf.fnfutil.block.custom.CassettePlayerBlock;
-import org.fnf.fnfutil.block.custom.CoffeeBlock;
-import org.fnf.fnfutil.block.custom.CoffeeMachineBlock;
-import org.fnf.fnfutil.block.custom.FionaBlock;
+import org.fnf.fnfutil.block.custom.*;
 
 import static org.fnf.fnfutil.fnfmain.MOD_ID;
 
@@ -38,6 +35,9 @@ public class ModBlocks {
             () -> new FionaBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .strength(0.1F)
                     .noOcclusion()));
+
+    public static final RegistryObject<Block> SL33PY_PLUSH = BLOCKS.register("sl33py_plush",
+            () -> new Sl33pyPlushBlock());
 
     public static final RegistryObject<Block> CAUTION = BLOCKS.register("caution",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).sound(SoundType.STONE)));

@@ -106,13 +106,17 @@ public class CassettePlayerBlock extends BaseEntityBlock {
         Direction dir = state.getValue(FACING);
         switch (dir) {
             case NORTH:
-                return Block.box(5.0D, 0.0D, 5.0D, 13.0D, 1.6D, 11.0D);
-            case EAST:
-                return Block.box(5.0D, 0.0D, 5.0D, 11.0D, 1.6D, 13.0D);
-            case WEST:
+                // Original: box(5, 0, 5, 13, 1.6, 11)
                 return Block.box(5.0D, 0.0D, 3.0D, 11.0D, 1.6D, 11.0D);
-            default: // SOUTH
+            case EAST:
+                // Original: box(5, 0, 5, 11, 1.6, 13)
+                return Block.box(5.0D, 0.0D, 5.0D, 13.0D, 1.6D, 11.0D);
+            case WEST:
+                // Original: box(5, 0, 3, 11, 1.6, 11)
                 return Block.box(3.0D, 0.0D, 5.0D, 11.0D, 1.6D, 11.0D);
+            default: // SOUTH
+                // Original: box(3, 0, 5, 11, 1.6, 11)
+                return Block.box(5.0D, 0.0D, 5.0D, 11.0D, 1.6D, 13.0D);
         }
     }
 

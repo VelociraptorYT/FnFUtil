@@ -34,5 +34,23 @@
         "stream": true
       }
     ]
+  },
+  "gun_fire": {
+    "subtitle": "sounds.fnfutil.gun_fire",
+    "sounds": [
+      {
+        "name": "fnfutil:gun_fire",
+        "stream": true
+      }
+    ]
+  },
+  "plush_honk": {
+    "subtitle": "sounds.fnfutil.plush_honk",
+    "sounds": [
+      {
+        "name": "fnfutil:plush_honk",
+        "stream": true
+      }
+    ]
   }
 }

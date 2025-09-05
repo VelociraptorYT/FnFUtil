@@ -1,0 +1,11 @@
+# Character|Actor|Color
+Mike|Dark|#800080
+Rick|Deluxe|#89CFF0
+Fredbear|Sleepy|Gold
+Kaden|MJ|#8B4513
+Puppet|CJ|Gray
+Foxy|Dragon|Red
+Neighbor|-|Black
+Sl33py|Sleepy|#b19cd9
+
+Sl33py: Ello Ello this is the testing script for fnfutil | Script reader ui :3

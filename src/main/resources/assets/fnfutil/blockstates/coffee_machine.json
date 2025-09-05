@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fnfutil:custom/coffee_machine"
+    },
+    "facing=east": {
+      "model": "fnfutil:custom/coffee_machine",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "fnfutil:custom/coffee_machine",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fnfutil:custom/coffee_machine",
+      "y": 270
+    }
+  }
+}

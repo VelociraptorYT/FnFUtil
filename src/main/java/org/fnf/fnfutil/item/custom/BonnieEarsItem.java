@@ -71,6 +71,8 @@ public class BonnieEarsItem extends GeoArmorItem implements IAnimatable {
 
             if (isWearing && !wasEquipped) {
                 tag.putBoolean("WasEquipped", true);
+                level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.ENDO_ATTACH.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+
             }
 
             if (!isWearing && wasEquipped) {

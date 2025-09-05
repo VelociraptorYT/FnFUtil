@@ -174,6 +174,9 @@ dependencies {
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.40')
     implementation fg.deobf("curse.maven:worldedit-225608:3922622")
     implementation fg.deobf("curse.maven:jei-238222:5846858")
+    implementation fg.deobf("curse.maven:custom-player-models-439870:6843737")
+    implementation 'com.google.code.gson:gson:2.10.1'
+
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html

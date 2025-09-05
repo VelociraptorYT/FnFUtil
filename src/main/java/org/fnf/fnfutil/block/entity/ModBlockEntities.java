@@ -6,10 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.fnf.fnfutil.block.ModBlocks;
-import org.fnf.fnfutil.block.entity.custom.CassettePlayerBlockEntity;
-import org.fnf.fnfutil.block.entity.custom.CoffeeBlockEntity;
-import org.fnf.fnfutil.block.entity.custom.CoffeeMachineBlockEntity;
-import org.fnf.fnfutil.block.entity.custom.FionaBlockEntity;
+import org.fnf.fnfutil.block.entity.custom.*;
 import org.fnf.fnfutil.fnfmain;
 
 public class ModBlockEntities {
@@ -35,6 +32,11 @@ public class ModBlockEntities {
             BLOCK_ENTITY_TYPES.register("coffee_block_entity", () ->
                     BlockEntityType.Builder.of(CoffeeBlockEntity::new,
                             ModBlocks.COFFEE.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<Sl33pyPlushBlockEntity>> SL33PY_PLUSH_BLOCK_ENTITY =
+            BLOCK_ENTITY_TYPES.register("sl33py_plush_entity", () ->
+                    BlockEntityType.Builder.of(Sl33pyPlushBlockEntity::new,
+                            ModBlocks.SL33PY_PLUSH.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITY_TYPES.register(eventBus);

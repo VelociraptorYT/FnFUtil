@@ -55,15 +55,19 @@ public class CoffeeMachineBlock extends BaseEntityBlock implements EntityBlock {
         Direction dir = state.getValue(FACING);
         switch (dir) {
             case NORTH:
-                return Block.box(1.0D, 0.0D, 3.5D, 15.0D, 18.0D, 14.0D);
+                return Block.box(2.0D, 0.0D, 2.0D, 13.5D, 18.0D, 16.0D);
             case EAST:
-                return Block.box(2.0D, 0.0D, 1.0D, 12.5D, 18.0D, 15.0D);
-            case WEST:
-                return Block.box(3.0D, 0.0D, 2.0D, 13.5D, 18.0D, 16.0D);
-            default: // SOUTH
+                return Block.box(0.0D, 0.0D, 3.0D, 14.0D, 18.0D, 14.0D);
+            case SOUTH:
+                return Block.box(3.0D, 0.0D, 0.0D, 14.0D, 18.0D, 14.0D);
+            default: // WEST
                 return Block.box(2.0D, 0.0D, 2.0D, 16.0D, 18.0D, 13.0D);
         }
     }
+
+
+
+
 
 
     @Override
